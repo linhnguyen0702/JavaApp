@@ -32,11 +32,6 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="btndangky" min="-2" pref="110" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="247" max="-2" attributes="0"/>
-          </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -82,7 +77,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="67" max="32767" attributes="0"/>
+                      <EmptySpace pref="43" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -112,6 +107,11 @@
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="181" max="-2" attributes="0"/>
+              <Component id="btndangky" min="-2" pref="110" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -133,7 +133,7 @@
                                   <Component id="txthoten" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                                   <Component id="txtngaysinh" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
+                              <EmptySpace pref="23" max="32767" attributes="0"/>
                               <Component id="lblemail" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="lbldiachi" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -143,7 +143,7 @@
                           <Component id="txttaikhoan" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                           <Component id="txtdiachi" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="20" max="32767" attributes="0"/>
+                      <EmptySpace pref="23" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="lblsodienthoai" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="lblmatkhau" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -153,16 +153,16 @@
                           <Component id="txtsodienthoai" alignment="3" min="-2" pref="28" max="-2" attributes="0"/>
                           <Component id="passmatkhau" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="lblgioitinh" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblnhaplai" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Component id="lblnhaplai" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblgioitinh" pref="22" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="passnhaplai" min="-2" pref="26" max="-2" attributes="0"/>
-                      <EmptySpace pref="36" max="32767" attributes="0"/>
+                      <EmptySpace pref="30" max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="1" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       <Component id="lbldoithuong" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>

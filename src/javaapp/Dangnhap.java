@@ -4,6 +4,8 @@
  */
 package javaapp;
 
+import dao.DangNhapDao;
+import dao.DatabaseConection;
 import java.sql.SQLException;
 import java.sql.*;
 import javax.swing.JOptionPane;
@@ -203,7 +205,7 @@ public class Dangnhap extends javax.swing.JFrame {
         String usename = txttaikhoan.getText();
         String password = new String(passmatkhau.getPassword());
 
-        try (Connection conn = bdconnect.getConnection()) {
+        try (Connection conn = DatabaseConection.getConnection()) {
             String sql = "SELECT * FROM dangnhap WHERE usename = ? AND password = ?";
             PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setString(1, usename);
@@ -221,8 +223,9 @@ public class Dangnhap extends javax.swing.JFrame {
                     prefs.remove("password");
                 }
 
-                Mainform mainform = new Mainform();
+                Mainform mainform = new Mainform(DangNhapDao.getDangNhap(usename));
                 mainform.setVisible(true);
+                mainform.setLocationRelativeTo(null);
                 dispose(); // Đóng form đăng nhập
             } else {
                 JOptionPane.showMessageDialog(this, "Đăng nhập thất bại. Vui lòng thử lại.");
