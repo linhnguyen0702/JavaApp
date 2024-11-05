@@ -3,10 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package javaapp;
+
 import dao.DatabaseConection;
 import java.sql.SQLException;
 import java.sql.*;
 import javax.swing.JOptionPane;
+
 /**
  *
  * @author linhy
@@ -176,7 +178,7 @@ public class Dangky extends javax.swing.JFrame {
                         .addComponent(lbldangnhap)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addGap(181, 181, 181)
+                .addGap(198, 198, 198)
                 .addComponent(btndangky, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
@@ -218,7 +220,7 @@ public class Dangky extends javax.swing.JFrame {
                             .addComponent(lblgioitinh, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(passnhaplai, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(lbldoithuong)
@@ -230,9 +232,9 @@ public class Dangky extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(radnu)
                             .addComponent(radchutro))
-                        .addGap(15, 15, 15)))
+                        .addGap(21, 21, 21)))
                 .addComponent(btndangky)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(lbldangnhap))
@@ -248,7 +250,7 @@ public class Dangky extends javax.swing.JFrame {
 
     private void btndangkyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndangkyActionPerformed
         // TODO add your handling code here:
-        String hoten =txthoten.getText();
+        String hoten = txthoten.getText();
         String taikhoan = txttaikhoan.getText();
         String sodienthoai = txtsodienthoai.getText();
         String ngaysinh = txtngaysinh.getText();
@@ -257,42 +259,53 @@ public class Dangky extends javax.swing.JFrame {
         String diachi = txtdiachi.getText();
         String gioitinh = radnam.isSelected() ? "Nam" : "Nữ";
         String doituong = radnguoithue.isSelected() ? "Người Thuê" : "Chủ trọ";
-         if (hoten.isEmpty() || taikhoan.isEmpty() || sodienthoai.isEmpty() || matkhau.isEmpty() || ngaysinh.isEmpty() || diachi.isEmpty() || gioitinh.isEmpty() || doituong.isEmpty()) {
-        JOptionPane.showMessageDialog(this, "Vui lòng điền đầy đủ thông tin!");
-        return;
-    }
-
-    if (!matkhau.equals(nhaplaiMatKhau)) {
-        JOptionPane.showMessageDialog(this, "Mật khẩu không khớp!");
-        return;
-    }
-
-    try (Connection conn = DatabaseConection.getConnection()) {
-        String sql = "INSERT INTO dangnhap ([name],[usename], [password], [phone], [Adress], [Datetime], [confirmpassword], [sex],[role]) VALUES (?, ?, ?, ?, ?, ?, ?,?,?)";
-        PreparedStatement pstmt = conn.prepareStatement(sql);
-        pstmt.setString(1, hoten);
-        pstmt.setString(2, taikhoan);
-        pstmt.setString(3, matkhau);
-        pstmt.setString(4, sodienthoai);
-        pstmt.setString(5, diachi); // Adjust this if you parse dates
-        pstmt.setString(6, ngaysinh);
-        pstmt.setString(7, nhaplaiMatKhau);
-        pstmt.setString(8, gioitinh);
-        pstmt.setString(9, doituong);
-
-        int rowsInserted = pstmt.executeUpdate();
-        if (rowsInserted > 0) {
-            JOptionPane.showMessageDialog(this, "Đăng ký thành công!");
-            // Redirect to login form if needed
-           Dangnhap dangnhap = new Dangnhap();
-           dangnhap.setVisible(true);
-           dangnhap.setLocationRelativeTo(null);
-            this.dispose();
+        if (hoten.isEmpty() || taikhoan.isEmpty() || sodienthoai.isEmpty() || matkhau.isEmpty() || ngaysinh.isEmpty() || diachi.isEmpty() || gioitinh.isEmpty() || doituong.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Vui lòng điền đầy đủ thông tin!");
+            return;
         }
-    } catch (SQLException e) {
-        JOptionPane.showMessageDialog(this, "Lỗi khi đăng ký: " + e.getMessage());
-    }
+
+        if (!matkhau.equals(nhaplaiMatKhau)) {
+            JOptionPane.showMessageDialog(this, "Mật khẩu không khớp!");
+            return;
+        }
+        // Kiểm tra độ mạnh của mật khẩu
+        if (!matkhau.matches("^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=\\S+$).{8,}$")) {
+            JOptionPane.showMessageDialog(this, "Mật khẩu phải có ít nhất 8 ký tự, bao gồm ít nhất 1 chữ in hoa, 1 ký tự đặc biệt và không có khoảng trắng.");
+            return;
+        }
+
+        // Kiểm tra số điện thoại
+        if (!sodienthoai.matches("^0\\d{9}$")) {
+            JOptionPane.showMessageDialog(this, "Số điện thoại phải bắt đầu bằng số 0 và có đúng 10 chữ số.");
+            return;
+        }
+        try (Connection conn = DatabaseConection.getConnection()) {
+            String sql = "INSERT INTO dangnhap ([name],[usename], [password], [phone], [Adress], [Datetime], [confirmpassword], [sex],[role]) VALUES (?, ?, ?, ?, ?, ?, ?,?,?)";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, hoten);
+            pstmt.setString(2, taikhoan);
+            pstmt.setString(3, matkhau);
+            pstmt.setString(4, sodienthoai);
+            pstmt.setString(5, diachi); // Adjust this if you parse dates
+            pstmt.setString(6, ngaysinh);
+            pstmt.setString(7, nhaplaiMatKhau);
+            pstmt.setString(8, gioitinh);
+            pstmt.setString(9, doituong);
+
+            int rowsInserted = pstmt.executeUpdate();
+            if (rowsInserted > 0) {
+                JOptionPane.showMessageDialog(this, "Đăng ký thành công!");
+                // Redirect to login form if needed
+                Dangnhap dangnhap = new Dangnhap();
+                dangnhap.setVisible(true);
+                dangnhap.setLocationRelativeTo(null);
+                this.dispose();
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(this, "Lỗi khi đăng ký: " + e.getMessage());
+        }
     }//GEN-LAST:event_btndangkyActionPerformed
+    // Hàm kiểm tra độ phức tạp của mật khẩu
 
     private void lbldangnhapMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lbldangnhapMouseClicked
         // TODO add your handling code here:
@@ -329,14 +342,14 @@ public class Dangky extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
-        
+
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 Dangky dangky = new Dangky();
                 dangky.setVisible(true);
                 dangky.setLocationRelativeTo(null);
-                
+
             }
         });
     }

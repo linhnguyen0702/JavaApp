@@ -310,7 +310,12 @@ public class updatethongtin extends javax.swing.JFrame {
         infoUpdate.setEmail(txtemail.getText());
         infoUpdate.setGioiTinh(radnam.isSelected() ? "Nam" : "Nữ");
         infoUpdate.setDoiTuong(radnguoithue.isSelected() ? "Người thuê" : "Chủ trọ");
-
+        String email = txtemail.getText();
+        String emailRegex = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$";
+        if (!email.matches(emailRegex)) {
+            JOptionPane.showMessageDialog(this, "Vui lòng nhập đúng định dạng email!", "Lỗi", JOptionPane.ERROR_MESSAGE);
+            return; // Dừng quá trình cập nhật nếu email không hợp lệ
+        }
         boolean isSuccess = DangNhapDao.updateUserInfo(infoUpdate, userInfo.getUsername());
         if (isSuccess) {
 //            JOptionPane.showMessageDialog(this, "Cập nhật thông tin thành công!");
@@ -322,6 +327,22 @@ public class updatethongtin extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Lỗi khi cập nhật thông tin người dùng.");
         }
     }//GEN-LAST:event_btnupdatethongtinActionPerformed
+
+    @Override
+    public void setDefaultCloseOperation(int operation) {
+        if (operation != DO_NOTHING_ON_CLOSE
+                && operation != HIDE_ON_CLOSE
+                && operation != DISPOSE_ON_CLOSE
+                && operation != EXIT_ON_CLOSE) {
+            throw new IllegalArgumentException("defaultCloseOperation must be"
+                    + " one of: DO_NOTHING_ON_CLOSE, HIDE_ON_CLOSE,"
+                    + " DISPOSE_ON_CLOSE, or EXIT_ON_CLOSE");
+        }
+
+        if (operation == EXIT_ON_CLOSE) {
+            setVisible(true);
+        }
+    }
 
     /**
      * @param args the command line arguments
