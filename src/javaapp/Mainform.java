@@ -4,6 +4,8 @@
  */
 package javaapp;
 
+import javaapp.chitietphongtro;
+import javaapp.updatethongtin;
 import model.DangnhapInfo;
 
 /**
@@ -47,11 +49,13 @@ public class Mainform extends javax.swing.JFrame {
         lbltrogiup.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         this.dangnhapInfo = dangnhapInfo;
         lbltennguoidung.setText(this.dangnhapInfo.getName());
+        lbldoituongthue.setText(this.dangnhapInfo.getDoiTuong());
     }
 
     public void setDangnhapInfor(DangnhapInfo dangnhapInfo) {
         this.dangnhapInfo = dangnhapInfo;
         lbltennguoidung.setText(this.dangnhapInfo.getName());
+        lbldoituongthue.setText(this.dangnhapInfo.getDoiTuong());
     }
 
     /**
@@ -70,27 +74,16 @@ public class Mainform extends javax.swing.JFrame {
         lbltimkiem = new javax.swing.JLabel();
         txttimkiem = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
         jPanel7 = new javax.swing.JPanel();
-        jLabel10 = new javax.swing.JLabel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTextArea3 = new javax.swing.JTextArea();
-        jLabel12 = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
-        jLabel13 = new javax.swing.JLabel();
         cbboxdiachi = new javax.swing.JComboBox<>();
         cbboxdientich = new javax.swing.JComboBox<>();
         jPanel3 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         lbltennguoidung = new javax.swing.JLabel();
         btnupdatethongtin = new javax.swing.JButton();
-        lblthoigian = new javax.swing.JLabel();
+        lbldoituongthue = new javax.swing.JLabel();
+        btndangthue = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         lblfacebook = new javax.swing.JLabel();
@@ -153,110 +146,41 @@ public class Mainform extends javax.swing.JFrame {
             }
         });
 
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/anh3(1).jpg"))); // NOI18N
-        jLabel8.setText("jLabel8");
-
-        jLabel11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setText("MINH CHÂU");
-
-        jTextArea1.setEditable(false);
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setText("Address: Hà Nội\nSquare: 20-25m^2\nDescription: Chính chủ cho thuê phòng \ntrọ, Chung cư mini\n\nStatus: Room available\nMore information, contact to:\nPhone number: 0123456789\nEmail:Nguyen0107@gmail.com\n\nPrice: 5.000.00-15.000.000 vnd/month\n");
-        jScrollPane1.setViewportView(jTextArea1);
-
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(73, 73, 73)
-                .addComponent(jLabel11)
-                .addContainerGap(77, Short.MAX_VALUE))
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGap(0, 244, Short.MAX_VALUE)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel11)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1))
+            .addGap(0, 443, Short.MAX_VALUE)
         );
 
         jPanel7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/anh4(1).jpg"))); // NOI18N
-
-        jTextArea3.setEditable(false);
-        jTextArea3.setColumns(20);
-        jTextArea3.setRows(5);
-        jTextArea3.setText("Address: Hà Nội\nSquare: 20-25m^2\nDescription: Chính chủ cho thuê phòng \ntrọ, Chung cư mini\n\nStatus: Room available\nMore information, contact to:\nPhone number: 0123456789\nEmail:Nguyen0107@gmail.com\n\nPrice: 5.000.00-15.000.000 vnd/month\n");
-        jScrollPane3.setViewportView(jTextArea3);
-
-        jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setText("MINH CHÂU");
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(74, 74, 74)
-                .addComponent(jLabel12)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addComponent(jLabel10)
-                .addGap(0, 2, Short.MAX_VALUE))
-            .addComponent(jScrollPane3, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGap(0, 256, Short.MAX_VALUE)
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
-                .addComponent(jLabel10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel12)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 236, Short.MAX_VALUE))
+            .addGap(0, 443, Short.MAX_VALUE)
         );
 
         jPanel9.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/anh5(1).jpg"))); // NOI18N
-
-        jTextArea2.setEditable(false);
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jTextArea2.setText("Address: Hà Nội\nSquare: 20-25m^2\nDescription: Chính chủ cho thuê phòng \ntrọ, Chung cư mini\n\nStatus: Room available\nMore information, contact to:\nPhone number: 0123456789\nEmail:Nguyen0107@gmail.com\n\nPrice: 5.000.00-15.000.000 vnd/month\n");
-        jScrollPane2.setViewportView(jTextArea2);
-
-        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setText("MINH CHÂU");
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addGap(62, 62, 62)
-                .addComponent(jLabel13)
-                .addContainerGap(85, Short.MAX_VALUE))
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGap(0, 244, Short.MAX_VALUE)
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel13)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2))
+            .addGap(0, 443, Short.MAX_VALUE)
         );
 
         cbboxdiachi.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Địa chỉ", "Hà Nội", "Hồ Chí Minh", "Đà Nẵng", "Vũng tàu", "Hải Dương", "Bắc Giang", "Thái Bình", "Bắc Ninh", "Bắc Giang" }));
@@ -276,19 +200,19 @@ public class Mainform extends javax.swing.JFrame {
                 .addGap(48, 48, 48)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(lbltimkiem, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txttimkiem, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(cbboxdiachi, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(67, 67, 67)
-                        .addComponent(cbboxdientich, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(48, 48, 48)
+                        .addComponent(cbboxdientich, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18))
         );
         jPanel2Layout.setVerticalGroup(
@@ -305,7 +229,7 @@ public class Mainform extends javax.swing.JFrame {
                     .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -323,8 +247,18 @@ public class Mainform extends javax.swing.JFrame {
             }
         });
 
-        lblthoigian.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblthoigian.setText("THỜI GIAN");
+        lbldoituongthue.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lbldoituongthue.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lbldoituongthue.setText("Đối tượng");
+        lbldoituongthue.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lbldoituongthue.setVerifyInputWhenFocusTarget(false);
+
+        btndangthue.setText("Đăng thuê");
+        btndangthue.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btndangthueActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -337,18 +271,17 @@ public class Mainform extends javax.swing.JFrame {
                         .addComponent(lbltennguoidung, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(0, 40, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                .addComponent(lblthoigian, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(47, 47, 47))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(52, 52, 52))))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(46, Short.MAX_VALUE)
-                .addComponent(btnupdatethongtin, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38))
+                            .addComponent(btndangthue, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(52, 52, 52))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                                    .addComponent(btnupdatethongtin, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(38, 38, 38)))))))
+            .addComponent(lbldoituongthue, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -357,11 +290,13 @@ public class Mainform extends javax.swing.JFrame {
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addComponent(lbltennguoidung, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
+                .addGap(1, 1, 1)
+                .addComponent(lbldoituongthue, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                .addGap(28, 28, 28)
                 .addComponent(btnupdatethongtin, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(lblthoigian)
-                .addContainerGap(249, Short.MAX_VALUE))
+                .addGap(42, 42, 42)
+                .addComponent(btndangthue, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(212, Short.MAX_VALUE))
         );
 
         jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -573,6 +508,21 @@ public class Mainform extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jPanel5MouseClicked
 
+    private void btndangthueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndangthueActionPerformed
+        // Show or hide "Đăng thuê" button first
+        if ("Chủ trọ".equals(this.dangnhapInfo.getDoiTuong())) {
+            btndangthue.setVisible(true);  // Show "Đăng thuê" button
+        } else {
+            btndangthue.setVisible(false); // Hide "Đăng thuê" button
+        }
+
+        // Show the updatephong form
+        updatephong updatep = new updatephong();
+        updatep.setVisible(true);
+        updatep.setLocationRelativeTo(null);
+
+    }//GEN-LAST:event_btndangthueActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -601,7 +551,6 @@ public class Mainform extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Mainform().setVisible(true);
@@ -610,22 +559,17 @@ public class Mainform extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btndangthue;
     private javax.swing.JButton btnupdatethongtin;
     private javax.swing.JComboBox<String> cbboxdiachi;
     private javax.swing.JComboBox<String> cbboxdientich;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
@@ -636,13 +580,8 @@ public class Mainform extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
-    private javax.swing.JTextArea jTextArea3;
     private javax.swing.JLabel lbldieukhoan;
+    private javax.swing.JLabel lbldoituongthue;
     private javax.swing.JLabel lblemail;
     private javax.swing.JLabel lblfacebook;
     private javax.swing.JLabel lblgioithieu;
@@ -650,7 +589,6 @@ public class Mainform extends javax.swing.JFrame {
     private javax.swing.JLabel lblinstagram;
     private javax.swing.JLabel lblnhanguyencan;
     private javax.swing.JLabel lbltennguoidung;
-    private javax.swing.JLabel lblthoigian;
     private javax.swing.JLabel lbltimkiem;
     private javax.swing.JLabel lbltro;
     private javax.swing.JLabel lbltrogiup;
