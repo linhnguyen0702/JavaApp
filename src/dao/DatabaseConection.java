@@ -13,7 +13,7 @@ import java.sql.SQLException;
  * @author linhy
  */
 public class DatabaseConection {
-    private static final String DB_URL = "jdbc:sqlserver://localhost:1433;DatabaseName=formdangnhap;instance=SQLSERVER;encrypt=true;TrustServerCertificate=true;";
+    private static final String DB_URL = "jdbc:sqlserver://localhost:1433;DatabaseName=ungdungtimkiemtro;instance=SQLSERVER;encrypt=true;TrustServerCertificate=true;";
     private static final String USER = "sa";
     private static final String PASS = "Linh12345";
      public static Connection getConnection() {

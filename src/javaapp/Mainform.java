@@ -7,7 +7,8 @@ package javaapp;
 import javaapp.chitietphongtro;
 import javaapp.updatethongtin;
 import model.DangnhapInfo;
-
+import javax.swing.ImageIcon;
+import  javax.swing.SwingConstants;
 /**
  *
  * @author linhy
@@ -73,9 +74,10 @@ public class Mainform extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         lbltimkiem = new javax.swing.JLabel();
         txttimkiem = new javax.swing.JTextField();
-        jPanel5 = new javax.swing.JPanel();
-        jPanel7 = new javax.swing.JPanel();
-        jPanel9 = new javax.swing.JPanel();
+        jpanthongtin1 = new javax.swing.JPanel();
+        lblthongtinphong1 = new javax.swing.JLabel();
+        jpanthongtin2 = new javax.swing.JPanel();
+        jpanthongtin3 = new javax.swing.JPanel();
         cbboxdiachi = new javax.swing.JComboBox<>();
         cbboxdientich = new javax.swing.JComboBox<>();
         jPanel3 = new javax.swing.JPanel();
@@ -83,7 +85,7 @@ public class Mainform extends javax.swing.JFrame {
         lbltennguoidung = new javax.swing.JLabel();
         btnupdatethongtin = new javax.swing.JButton();
         lbldoituongthue = new javax.swing.JLabel();
-        btndangthue = new javax.swing.JButton();
+        btndangtin = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         lblfacebook = new javax.swing.JLabel();
@@ -139,47 +141,59 @@ public class Mainform extends javax.swing.JFrame {
         lbltimkiem.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lbltimkiem.setText("Tìm kiếm");
 
-        jPanel5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jPanel5.addMouseListener(new java.awt.event.MouseAdapter() {
+        jpanthongtin1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jpanthongtin1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPanel5MouseClicked(evt);
+                jpanthongtin1MouseClicked(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 244, Short.MAX_VALUE)
+        lblthongtinphong1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblthongtinphong1MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jpanthongtin1Layout = new javax.swing.GroupLayout(jpanthongtin1);
+        jpanthongtin1.setLayout(jpanthongtin1Layout);
+        jpanthongtin1Layout.setHorizontalGroup(
+            jpanthongtin1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanthongtin1Layout.createSequentialGroup()
+                .addContainerGap(105, Short.MAX_VALUE)
+                .addComponent(lblthongtinphong1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(102, 102, 102))
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 443, Short.MAX_VALUE)
+        jpanthongtin1Layout.setVerticalGroup(
+            jpanthongtin1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpanthongtin1Layout.createSequentialGroup()
+                .addGap(103, 103, 103)
+                .addComponent(lblthongtinphong1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jpanthongtin2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jpanthongtin2Layout = new javax.swing.GroupLayout(jpanthongtin2);
+        jpanthongtin2.setLayout(jpanthongtin2Layout);
+        jpanthongtin2Layout.setHorizontalGroup(
+            jpanthongtin2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 256, Short.MAX_VALUE)
         );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jpanthongtin2Layout.setVerticalGroup(
+            jpanthongtin2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 443, Short.MAX_VALUE)
         );
 
-        jPanel9.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jpanthongtin3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jpanthongtin3Layout = new javax.swing.GroupLayout(jpanthongtin3);
+        jpanthongtin3.setLayout(jpanthongtin3Layout);
+        jpanthongtin3Layout.setHorizontalGroup(
+            jpanthongtin3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 244, Short.MAX_VALUE)
         );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        jpanthongtin3Layout.setVerticalGroup(
+            jpanthongtin3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 443, Short.MAX_VALUE)
         );
 
@@ -200,11 +214,11 @@ public class Mainform extends javax.swing.JFrame {
                 .addGap(48, 48, 48)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jpanthongtin1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jpanthongtin2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jpanthongtin3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(lbltimkiem, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -226,9 +240,9 @@ public class Mainform extends javax.swing.JFrame {
                     .addComponent(cbboxdientich, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(30, 30, 30)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jpanthongtin2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jpanthongtin3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jpanthongtin1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
 
@@ -253,10 +267,10 @@ public class Mainform extends javax.swing.JFrame {
         lbldoituongthue.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         lbldoituongthue.setVerifyInputWhenFocusTarget(false);
 
-        btndangthue.setText("Đăng thuê");
-        btndangthue.addActionListener(new java.awt.event.ActionListener() {
+        btndangtin.setText("Đăng tin");
+        btndangtin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btndangthueActionPerformed(evt);
+                btndangtinActionPerformed(evt);
             }
         });
 
@@ -273,7 +287,7 @@ public class Mainform extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                         .addGap(0, 40, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btndangthue, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btndangtin, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -295,7 +309,7 @@ public class Mainform extends javax.swing.JFrame {
                 .addGap(28, 28, 28)
                 .addComponent(btnupdatethongtin, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(42, 42, 42)
-                .addComponent(btndangthue, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btndangtin, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(212, Short.MAX_VALUE))
         );
 
@@ -500,20 +514,20 @@ public class Mainform extends javax.swing.JFrame {
         capnhat.setLocationRelativeTo(null);
     }//GEN-LAST:event_btnupdatethongtinActionPerformed
 
-    private void jPanel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel5MouseClicked
+    private void jpanthongtin1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jpanthongtin1MouseClicked
         // TODO add your handling code here:
         chitietphongtro ctpt = new chitietphongtro(this);
         ctpt.setVisible(true);
         ctpt.setLocationRelativeTo(null);
         this.dispose();
-    }//GEN-LAST:event_jPanel5MouseClicked
+    }//GEN-LAST:event_jpanthongtin1MouseClicked
 
-    private void btndangthueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndangthueActionPerformed
+    private void btndangtinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndangtinActionPerformed
         // Show or hide "Đăng thuê" button first
         if ("Chủ trọ".equals(this.dangnhapInfo.getDoiTuong())) {
-            btndangthue.setVisible(true);  // Show "Đăng thuê" button
+            btndangtin.setVisible(true);  // Show "Đăng thuê" button
         } else {
-            btndangthue.setVisible(false); // Hide "Đăng thuê" button
+            btndangtin.setVisible(false); // Hide "Đăng thuê" button
         }
 
         // Show the updatephong form
@@ -521,7 +535,11 @@ public class Mainform extends javax.swing.JFrame {
         updatep.setVisible(true);
         updatep.setLocationRelativeTo(null);
 
-    }//GEN-LAST:event_btndangthueActionPerformed
+    }//GEN-LAST:event_btndangtinActionPerformed
+
+    private void lblthongtinphong1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblthongtinphong1MouseClicked
+     
+    }//GEN-LAST:event_lblthongtinphong1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -559,7 +577,7 @@ public class Mainform extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btndangthue;
+    private javax.swing.JButton btndangtin;
     private javax.swing.JButton btnupdatethongtin;
     private javax.swing.JComboBox<String> cbboxdiachi;
     private javax.swing.JComboBox<String> cbboxdientich;
@@ -577,9 +595,9 @@ public class Mainform extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel9;
+    private javax.swing.JPanel jpanthongtin1;
+    private javax.swing.JPanel jpanthongtin2;
+    private javax.swing.JPanel jpanthongtin3;
     private javax.swing.JLabel lbldieukhoan;
     private javax.swing.JLabel lbldoituongthue;
     private javax.swing.JLabel lblemail;
@@ -589,6 +607,7 @@ public class Mainform extends javax.swing.JFrame {
     private javax.swing.JLabel lblinstagram;
     private javax.swing.JLabel lblnhanguyencan;
     private javax.swing.JLabel lbltennguoidung;
+    private javax.swing.JLabel lblthongtinphong1;
     private javax.swing.JLabel lbltimkiem;
     private javax.swing.JLabel lbltro;
     private javax.swing.JLabel lbltrogiup;

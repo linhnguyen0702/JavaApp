@@ -177,29 +177,6 @@ public class Dangnhap extends javax.swing.JFrame {
     }//GEN-LAST:event_txttaikhoanActionPerformed
 
     private void btndangnhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndangnhapActionPerformed
-        // TODO add your handling code here:
-        /*String usename = txttaikhoan.getText();
-        String password = new String(passmatkhau.getPassword());
-
-        try (Connection conn = bdconnect.getConnection()) {
-            String sql = "SELECT * FROM dangnhap WHERE usename = ? AND password = ?";
-            PreparedStatement stmt = conn.prepareStatement(sql);
-            stmt.setString(1, usename);
-            stmt.setString(2, password);
-            ResultSet rs = stmt.executeQuery();
-
-            if (rs.next()) {
-//                JOptionPane.showMessageDialog(this, "Đăng nhập thành công!");
-                Mainform mainform = new Mainform();
-                mainform.setVisible(true);
-                dispose(); // Đóng form đăng nhập
-            } else {
-                JOptionPane.showMessageDialog(this, "Đăng nhập thất bại. Vui lòng thử lại.");
-            }
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            JOptionPane.showMessageDialog(this, "Lỗi kết nối cơ sở dữ liệu: " + ex.getMessage());
-        }*/
         String usename = txttaikhoan.getText();
         String password = new String(passmatkhau.getPassword());
 
