@@ -262,7 +262,7 @@ public class Mainform extends javax.swing.JFrame {
         });
 
         lbldoituongthue.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lbldoituongthue.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lbldoituongthue.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbldoituongthue.setText("Đối tượng");
         lbldoituongthue.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         lbldoituongthue.setVerifyInputWhenFocusTarget(false);
@@ -523,12 +523,6 @@ public class Mainform extends javax.swing.JFrame {
     }//GEN-LAST:event_jpanthongtin1MouseClicked
 
     private void btndangtinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndangtinActionPerformed
-        // Show or hide "Đăng thuê" button first
-        if ("Chủ trọ".equals(this.dangnhapInfo.getDoiTuong())) {
-            btndangtin.setVisible(true);  // Show "Đăng thuê" button
-        } else {
-            btndangtin.setVisible(false); // Hide "Đăng thuê" button
-        }
 
         // Show the updatephong form
         updatephong updatep = new updatephong();
