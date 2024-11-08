@@ -88,84 +88,107 @@ public class updatethongtin extends javax.swing.JFrame {
         radnguoithue = new javax.swing.JRadioButton();
         radchutro = new javax.swing.JRadioButton();
         btnupdatethongtin = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("THÔNG TIN CÁ NHÂN");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 23, 562, -1));
 
         lblhoten.setText("Họ tên");
+        getContentPane().add(lblhoten, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 75, 49, -1));
 
         lbltaikhoan.setText("Tài Khoản");
+        getContentPane().add(lbltaikhoan, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 142, -1, -1));
 
         lblsodienthoai.setText("Số điện thoại");
+        getContentPane().add(lblsodienthoai, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 214, -1, -1));
 
         lblgioitinh.setText("Giới tính");
+        getContentPane().add(lblgioitinh, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 316, -1, -1));
 
         lbldoituong.setText("Đối tượng");
+        getContentPane().add(lbldoituong, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 316, -1, -1));
 
         lblngaysinh.setText("Ngày sinh");
+        getContentPane().add(lblngaysinh, new org.netbeans.lib.awtextra.AbsoluteConstraints(333, 75, -1, -1));
 
         lbldiachi.setText("Địa chỉ");
+        getContentPane().add(lbldiachi, new org.netbeans.lib.awtextra.AbsoluteConstraints(333, 142, 52, -1));
 
         lblCCCD.setText("CCCD");
+        getContentPane().add(lblCCCD, new org.netbeans.lib.awtextra.AbsoluteConstraints(333, 214, 37, -1));
 
         lblemail.setText("Email");
+        getContentPane().add(lblemail, new org.netbeans.lib.awtextra.AbsoluteConstraints(333, 286, 43, -1));
 
         txttaikhoan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txttaikhoanActionPerformed(evt);
             }
         });
+        getContentPane().add(txttaikhoan, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 170, 205, 32));
 
         txtsodienthoai.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtsodienthoaiActionPerformed(evt);
             }
         });
+        getContentPane().add(txtsodienthoai, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 246, 205, 32));
 
         txtngaysinh.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtngaysinhActionPerformed(evt);
             }
         });
+        getContentPane().add(txtngaysinh, new org.netbeans.lib.awtextra.AbsoluteConstraints(333, 103, 205, 32));
 
         txtemail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtemailActionPerformed(evt);
             }
         });
+        getContentPane().add(txtemail, new org.netbeans.lib.awtextra.AbsoluteConstraints(333, 308, 205, 32));
 
         txthoten.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txthotenActionPerformed(evt);
             }
         });
+        getContentPane().add(txthoten, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 103, 205, 32));
 
         txtdiachi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtdiachiActionPerformed(evt);
             }
         });
+        getContentPane().add(txtdiachi, new org.netbeans.lib.awtextra.AbsoluteConstraints(333, 170, 205, 32));
 
         txtcccd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtcccdActionPerformed(evt);
             }
         });
+        getContentPane().add(txtcccd, new org.netbeans.lib.awtextra.AbsoluteConstraints(333, 246, 205, 32));
 
         btngrgioitinh.add(radnam);
         radnam.setText("Nam");
+        getContentPane().add(radnam, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 346, 98, -1));
 
         btngrgioitinh.add(radnu);
         radnu.setText("Nữ");
+        getContentPane().add(radnu, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 388, 98, -1));
 
         btngrdoituong.add(radnguoithue);
         radnguoithue.setText("Người thuê");
+        getContentPane().add(radnguoithue, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 346, 98, -1));
 
         btngrdoituong.add(radchutro);
         radchutro.setText("Chủ trọ");
+        getContentPane().add(radchutro, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 388, 98, -1));
 
         btnupdatethongtin.setText("CẬP NHẬT THÔNG TIN");
         btnupdatethongtin.addActionListener(new java.awt.event.ActionListener() {
@@ -173,98 +196,10 @@ public class updatethongtin extends javax.swing.JFrame {
                 btnupdatethongtinActionPerformed(evt);
             }
         });
+        getContentPane().add(btnupdatethongtin, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 430, -1, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(lblhoten, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lbltaikhoan)
-                            .addComponent(lblsodienthoai)
-                            .addComponent(txthoten, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txttaikhoan, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtsodienthoai, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblgioitinh)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lbldoituong)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtemail, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblemail, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(lblCCCD, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(lblngaysinh, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lbldiachi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(txtngaysinh, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtdiachi, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtcccd, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(radnu, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(radnam, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(53, 53, 53)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(radnguoithue, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(radchutro, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnupdatethongtin))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(24, 24, 24))
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jLabel1)
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblhoten)
-                    .addComponent(lblngaysinh))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtngaysinh, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txthoten, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(7, 7, 7)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lbltaikhoan)
-                    .addComponent(lbldiachi))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtdiachi, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txttaikhoan, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblsodienthoai)
-                    .addComponent(lblCCCD))
-                .addGap(16, 16, 16)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtcccd, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtsodienthoai, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(8, 8, 8)
-                .addComponent(lblemail)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtemail, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lbldoituong)
-                    .addComponent(lblgioitinh))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(radnam)
-                    .addComponent(radnguoithue))
-                .addGap(21, 21, 21)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(radnu)
-                    .addComponent(radchutro))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
-                .addComponent(btnupdatethongtin)
-                .addGap(17, 17, 17))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/anhnen.jpg"))); // NOI18N
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 560, 490));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -349,7 +284,9 @@ public class updatethongtin extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new updatethongtin().setVisible(true);
+                updatethongtin updatettp = new updatethongtin();
+                updatettp.setVisible(true);
+                updatettp.setResizable(false);
             }
         });
     }
@@ -359,6 +296,7 @@ public class updatethongtin extends javax.swing.JFrame {
     private javax.swing.ButtonGroup btngrgioitinh;
     private javax.swing.JButton btnupdatethongtin;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblCCCD;
     private javax.swing.JLabel lbldiachi;
     private javax.swing.JLabel lbldoituong;
