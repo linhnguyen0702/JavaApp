@@ -4,6 +4,8 @@
  */
 package model;
 
+import java.util.Date;
+
 /**
  *
  * @author linhy
@@ -13,12 +15,13 @@ public class DangnhapInfo {
     private String name;
     private String username;
     private String phone;
-    private String dob;
+    private Date dob;
     private String address;
     private String cccd;
     private String email;
     private String gioiTinh;
     private String doiTuong;
+    private int id_name;
 
     public String getName() {
         return name;
@@ -44,11 +47,11 @@ public class DangnhapInfo {
         this.phone = phone;
     }
 
-    public String getDob() {
+    public Date getDob() {
         return dob;
     }
 
-    public void setDob(String dob) {
+    public void setDob(Date dob) {
         this.dob = dob;
     }
 
@@ -91,6 +94,16 @@ public class DangnhapInfo {
     public void setDoiTuong(String doiTuong) {
         this.doiTuong = doiTuong;
     }
+
+    public int getId_name() {
+        return id_name;
+    }
+
+    public void setId_name(int id_name) {
+        this.id_name = id_name;
+    }
+
+   
     
     
 }

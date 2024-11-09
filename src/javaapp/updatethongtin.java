@@ -36,7 +36,7 @@ public class updatethongtin extends javax.swing.JFrame {
             txthoten.setText(userInfo.getName());
             txttaikhoan.setText(userInfo.getUsername());
             txtsodienthoai.setText(userInfo.getPhone());
-            txtngaysinh.setText(userInfo.getDob());
+            jcldngaysinh.setDate(userInfo.getDob());
             txtdiachi.setText(userInfo.getAddress());
             txtcccd.setText(userInfo.getCccd());
             txtemail.setText(userInfo.getEmail());
@@ -78,7 +78,6 @@ public class updatethongtin extends javax.swing.JFrame {
         lblemail = new javax.swing.JLabel();
         txttaikhoan = new javax.swing.JTextField();
         txtsodienthoai = new javax.swing.JTextField();
-        txtngaysinh = new javax.swing.JTextField();
         txtemail = new javax.swing.JTextField();
         txthoten = new javax.swing.JTextField();
         txtdiachi = new javax.swing.JTextField();
@@ -88,6 +87,7 @@ public class updatethongtin extends javax.swing.JFrame {
         radnguoithue = new javax.swing.JRadioButton();
         radchutro = new javax.swing.JRadioButton();
         btnupdatethongtin = new javax.swing.JButton();
+        jcldngaysinh = new com.toedter.calendar.JDateChooser();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -138,13 +138,6 @@ public class updatethongtin extends javax.swing.JFrame {
             }
         });
         getContentPane().add(txtsodienthoai, new org.netbeans.lib.awtextra.AbsoluteConstraints(29, 246, 205, 32));
-
-        txtngaysinh.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtngaysinhActionPerformed(evt);
-            }
-        });
-        getContentPane().add(txtngaysinh, new org.netbeans.lib.awtextra.AbsoluteConstraints(333, 103, 205, 32));
 
         txtemail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -197,6 +190,7 @@ public class updatethongtin extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnupdatethongtin, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 430, -1, -1));
+        getContentPane().add(jcldngaysinh, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 102, 210, 30));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/anhnen.jpg"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 560, 490));
@@ -211,10 +205,6 @@ public class updatethongtin extends javax.swing.JFrame {
     private void txtsodienthoaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtsodienthoaiActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtsodienthoaiActionPerformed
-
-    private void txtngaysinhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtngaysinhActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtngaysinhActionPerformed
 
     private void txtemailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtemailActionPerformed
         // TODO add your handling code here:
@@ -237,7 +227,7 @@ public class updatethongtin extends javax.swing.JFrame {
         infoUpdate.setName(txthoten.getText());
         infoUpdate.setUsername(txttaikhoan.getText());
         infoUpdate.setPhone(txtsodienthoai.getText());
-        infoUpdate.setDob(txtngaysinh.getText());
+        infoUpdate.setDob(jcldngaysinh.getDate());
         infoUpdate.setAddress(txtdiachi.getText());
         infoUpdate.setCccd(txtcccd.getText());
         infoUpdate.setEmail(txtemail.getText());
@@ -297,6 +287,7 @@ public class updatethongtin extends javax.swing.JFrame {
     private javax.swing.JButton btnupdatethongtin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private com.toedter.calendar.JDateChooser jcldngaysinh;
     private javax.swing.JLabel lblCCCD;
     private javax.swing.JLabel lbldiachi;
     private javax.swing.JLabel lbldoituong;
@@ -314,7 +305,6 @@ public class updatethongtin extends javax.swing.JFrame {
     private javax.swing.JTextField txtdiachi;
     private javax.swing.JTextField txtemail;
     private javax.swing.JTextField txthoten;
-    private javax.swing.JTextField txtngaysinh;
     private javax.swing.JTextField txtsodienthoai;
     private javax.swing.JTextField txttaikhoan;
     // End of variables declaration//GEN-END:variables

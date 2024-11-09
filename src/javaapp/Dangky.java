@@ -47,7 +47,6 @@ public class Dangky extends javax.swing.JFrame {
         txtsodienthoai = new javax.swing.JTextField();
         txthoten = new javax.swing.JTextField();
         txttaikhoan = new javax.swing.JTextField();
-        txtngaysinh = new javax.swing.JTextField();
         txtdiachi = new javax.swing.JTextField();
         radnam = new javax.swing.JRadioButton();
         radnu = new javax.swing.JRadioButton();
@@ -58,14 +57,15 @@ public class Dangky extends javax.swing.JFrame {
         lbldoithuong = new javax.swing.JLabel();
         radnguoithue = new javax.swing.JRadioButton();
         radchutro = new javax.swing.JRadioButton();
-        jLabel2 = new javax.swing.JLabel();
+        jcldngaysinh = new com.toedter.calendar.JDateChooser();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 204, 204));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblhoten.setText("Họ tên");
-        getContentPane().add(lblhoten, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 109, 47, -1));
+        getContentPane().add(lblhoten, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 47, -1));
 
         lblemail.setText("Tài khoản");
         getContentPane().add(lblemail, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 182, 65, -1));
@@ -79,10 +79,10 @@ public class Dangky extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("TẠO TÀI KHOẢN");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 532, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 540, -1));
 
         lblngaysinh.setText("Ngày sinh");
-        getContentPane().add(lblngaysinh, new org.netbeans.lib.awtextra.AbsoluteConstraints(294, 109, 60, -1));
+        getContentPane().add(lblngaysinh, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 100, 60, -1));
 
         lbldiachi.setText("Địa chỉ");
         getContentPane().add(lbldiachi, new org.netbeans.lib.awtextra.AbsoluteConstraints(294, 182, 45, -1));
@@ -109,7 +109,6 @@ public class Dangky extends javax.swing.JFrame {
         getContentPane().add(txtsodienthoai, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 284, 195, 28));
         getContentPane().add(txthoten, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 131, 195, 28));
         getContentPane().add(txttaikhoan, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 195, 28));
-        getContentPane().add(txtngaysinh, new org.netbeans.lib.awtextra.AbsoluteConstraints(294, 131, 195, 28));
         getContentPane().add(txtdiachi, new org.netbeans.lib.awtextra.AbsoluteConstraints(294, 210, 195, 28));
 
         btngrgioitinh.add(radnam);
@@ -144,9 +143,10 @@ public class Dangky extends javax.swing.JFrame {
         btngrdoituong.add(radchutro);
         radchutro.setText("Chủ trọ");
         getContentPane().add(radchutro, new org.netbeans.lib.awtextra.AbsoluteConstraints(141, 372, 98, -1));
+        getContentPane().add(jcldngaysinh, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 130, 200, 30));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/anhnen.jpg"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 480));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/anhnen.jpg"))); // NOI18N
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 480));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -160,13 +160,21 @@ public class Dangky extends javax.swing.JFrame {
         String hoten = txthoten.getText();
         String taikhoan = txttaikhoan.getText();
         String sodienthoai = txtsodienthoai.getText();
-        String ngaysinh = txtngaysinh.getText();
+        // Get the selected date from the JCalendar (jcldngaysinh)
+        java.util.Date utilDate = jcldngaysinh.getDate();
+
+        // Check if the date is not null
+        if (utilDate == null) {
+            JOptionPane.showMessageDialog(this, "Vui lòng chọn ngày sinh!");
+            return;
+        }
+        java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());
         String matkhau = new String(passmatkhau.getPassword());
         String nhaplaiMatKhau = new String(passnhaplai.getPassword());
         String diachi = txtdiachi.getText();
         String gioitinh = radnam.isSelected() ? "Nam" : "Nữ";
         String doituong = radnguoithue.isSelected() ? "Người Thuê" : "Chủ trọ";
-        if (hoten.isEmpty() || taikhoan.isEmpty() || sodienthoai.isEmpty() || matkhau.isEmpty() || ngaysinh.isEmpty() || diachi.isEmpty() || gioitinh.isEmpty() || doituong.isEmpty()) {
+        if (hoten.isEmpty() || taikhoan.isEmpty() || sodienthoai.isEmpty() || matkhau.isEmpty() || diachi.isEmpty() || gioitinh.isEmpty() || doituong.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Vui lòng điền đầy đủ thông tin!");
             return;
         }
@@ -194,7 +202,7 @@ public class Dangky extends javax.swing.JFrame {
             pstmt.setString(3, matkhau);
             pstmt.setString(4, sodienthoai);
             pstmt.setString(5, diachi); // Adjust this if you parse dates
-            pstmt.setString(6, ngaysinh);
+            pstmt.setDate(6, sqlDate);
             pstmt.setString(7, nhaplaiMatKhau);
             pstmt.setString(8, gioitinh);
             pstmt.setString(9, doituong);
@@ -255,8 +263,8 @@ public class Dangky extends javax.swing.JFrame {
             public void run() {
                 Dangky dangky = new Dangky();
                 dangky.setVisible(true);
-                dangky.setResizable(false);
                 dangky.setLocationRelativeTo(null);
+                dangky.setResizable(false);
 
             }
         });
@@ -267,8 +275,9 @@ public class Dangky extends javax.swing.JFrame {
     private javax.swing.ButtonGroup btngrdoituong;
     private javax.swing.ButtonGroup btngrgioitinh;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel6;
+    private com.toedter.calendar.JDateChooser jcldngaysinh;
     private javax.swing.JLabel lbldangnhap;
     private javax.swing.JLabel lbldiachi;
     private javax.swing.JLabel lbldoithuong;
@@ -287,7 +296,6 @@ public class Dangky extends javax.swing.JFrame {
     private javax.swing.JRadioButton radnu;
     private javax.swing.JTextField txtdiachi;
     private javax.swing.JTextField txthoten;
-    private javax.swing.JTextField txtngaysinh;
     private javax.swing.JTextField txtsodienthoai;
     private javax.swing.JTextField txttaikhoan;
     // End of variables declaration//GEN-END:variables

@@ -310,9 +310,9 @@ public class updatephong extends javax.swing.JFrame {
 
                 int rowsAffected = stmt.executeUpdate();  // Thực hiện insert từng dòng
                 if (rowsAffected > 0) {
-                    System.out.println("Dòng đã được thêm vào cơ sở dữ liệu.");
+                    System.out.println("Dong da duoc them vao co so du lieu");
                 } else {
-                    System.out.println("Không thêm được dòng.");
+                    System.out.println("Khong them duoc dong");
                 }
             }
 

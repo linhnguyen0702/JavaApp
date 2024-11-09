@@ -32,7 +32,7 @@ public class DangNhapDao {
                 dangnhap.setName(rs.getString("name"));
                 dangnhap.setUsername(rs.getString("usename"));
                 dangnhap.setPhone(rs.getString("phone"));
-                dangnhap.setDob(rs.getString("Datetime"));
+                dangnhap.setDob(rs.getDate("Datetime"));
                 dangnhap.setAddress(rs.getString("Adress"));
                 dangnhap.setCccd(rs.getString("cccd"));
                 dangnhap.setEmail(rs.getString("email"));
@@ -58,7 +58,7 @@ public class DangNhapDao {
             pstmtUpdate.setString(2, dangnhapInfo.getUsername());
             pstmtUpdate.setString(3, dangnhapInfo.getPhone());
             pstmtUpdate.setString(4, dangnhapInfo.getAddress());
-            pstmtUpdate.setString(5, dangnhapInfo.getDob());
+            pstmtUpdate.setDate(5, new java.sql.Date(dangnhapInfo.getDob().getTime()));
             pstmtUpdate.setString(6, "Nam".equals(dangnhapInfo.getGioiTinh()) ? "Nam" : "Nữ");
             pstmtUpdate.setString(7, "Người thuê".equals(dangnhapInfo.getDoiTuong()) ? "Người thuê" : "Chủ trọ");
             pstmtUpdate.setString(8, dangnhapInfo.getCccd());

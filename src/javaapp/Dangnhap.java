@@ -10,22 +10,25 @@ import java.sql.SQLException;
 import java.sql.*;
 import javax.swing.JOptionPane;
 import java.util.prefs.Preferences;
+
 /**
  *
  * @author linhy
  */
 public class Dangnhap extends javax.swing.JFrame {
- private Preferences prefs; // Để lưu thông tin người dùng
+
+    private Preferences prefs; // Để lưu thông tin người dùng
+
     /**
      * Creates new form NewJFrame
      */
     public Dangnhap() {
         initComponents();
         lbldangky.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-         
+
         // Khởi tạo Preferences để lưu thông tin
         prefs = Preferences.userNodeForPackage(Dangnhap.class);
-        
+
         // Lấy thông tin từ Preferences và điền vào các trường
         String savedUsername = prefs.get("username", ""); // Lấy tài khoản đã lưu
         String savedPassword = prefs.get("password", ""); // Lấy mật khẩu đã lưu
@@ -133,7 +136,15 @@ public class Dangnhap extends javax.swing.JFrame {
     private void btndangnhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndangnhapActionPerformed
         String usename = txttaikhoan.getText();
         String password = new String(passmatkhau.getPassword());
-
+        // Kiểm tra nếu tài khoản hoặc mật khẩu bị bỏ trống
+        if (usename.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Vui lòng nhập tài khoản!");
+            return;
+        }
+        if (password.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Vui lòng nhập mật khẩu!");
+            return;
+        }
         try (Connection conn = DatabaseConection.getConnection()) {
             String sql = "SELECT * FROM dangnhap WHERE usename = ? AND password = ?";
             PreparedStatement stmt = conn.prepareStatement(sql);
@@ -157,7 +168,7 @@ public class Dangnhap extends javax.swing.JFrame {
                 mainform.setLocationRelativeTo(null);
                 dispose(); // Đóng form đăng nhập
             } else {
-                JOptionPane.showMessageDialog(this, "Đăng nhập thất bại. Vui lòng thử lại.");
+                JOptionPane.showMessageDialog(this, "Đăng nhập thất bại,kiểm tra lại username hoặc password,vui lòng thử lại .");
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
