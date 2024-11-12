@@ -29,6 +29,7 @@ public class DangNhapDao {
             if (rs.next()) {
                 DangnhapInfo dangnhap = new DangnhapInfo();
                 // Assign user information from DB to form fields
+                dangnhap.setId_name(rs.getInt("id_name"));
                 dangnhap.setName(rs.getString("name"));
                 dangnhap.setUsername(rs.getString("usename"));
                 dangnhap.setPhone(rs.getString("phone"));

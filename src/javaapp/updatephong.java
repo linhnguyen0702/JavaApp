@@ -4,21 +4,17 @@
  */
 package javaapp;
 
-import dao.DatabaseConection;
+import dao.PhongDao;
 import java.awt.Image;
-import java.awt.image.BufferedImage;
-import java.sql.SQLException;
-import java.sql.*;
 import javax.swing.JFileChooser;
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Vector;
-import javax.imageio.ImageIO;
-import javax.swing.Icon;
+import java.util.LinkedList;
+import java.util.List;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import model.quanly;
+import model.DangnhapInfo;
+import model.PhongInfo;
 
 /**
  *
@@ -26,11 +22,19 @@ import model.quanly;
  */
 public class updatephong extends javax.swing.JFrame {
 
+    private DangnhapInfo dangnhapInfo;
+
     /**
      * Creates new form updatephong
      */
     public updatephong() {
         initComponents();
+    }
+
+    public updatephong(DangnhapInfo dangnhapInfo) {
+        initComponents();
+        this.dangnhapInfo = dangnhapInfo;
+        displayPhongByUser();
     }
 
     /**
@@ -73,7 +77,7 @@ public class updatephong extends javax.swing.JFrame {
         lblloaitin.setText("Loại tin");
         getContentPane().add(lblloaitin, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 68, 60, -1));
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("ĐĂNG TIN");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 720, -1));
@@ -175,8 +179,10 @@ public class updatephong extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    public ArrayList<quanly> ArrayQL = new ArrayList<quanly>();
-    String duongdananh = "D:\\icon";
+    private List<PhongInfo> ArrayQL = new LinkedList<>();
+    private List<PhongInfo> listAdd = new LinkedList<>();
+    private List<PhongInfo> listUpdate = new LinkedList<>();
+    String duongdananh = "";
 
     public ImageIcon ResizeImage(String ImagePath) {
         ImageIcon MyImage = new ImageIcon(ImagePath);
@@ -187,7 +193,8 @@ public class updatephong extends javax.swing.JFrame {
     }
     private void btnanhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnanhActionPerformed
         try {
-            JFileChooser f = new JFileChooser("D:\\icon");
+            duongdananh = "D:\\Learning\\JavaApp\\src\\icon";
+            JFileChooser f = new JFileChooser("D:\\Learning\\JavaApp\\src\\icon");
             f.setDialogTitle("Mo file");
             f.showOpenDialog(null);
             File fteanh = f.getSelectedFile();
@@ -205,47 +212,43 @@ public class updatephong extends javax.swing.JFrame {
     private void btnthemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnthemActionPerformed
         FilDataToArrayList();
         FilDataToArrayListTable();
+        clearPhongInfo();
     }//GEN-LAST:event_btnthemActionPerformed
     public void FilDataToArrayList() {
-        quanly ql = new quanly();
+        PhongInfo ql = new PhongInfo();
         ql.setLoaitin(cobloaitin.getSelectedItem().toString()); // Corrected to getSelectedItem
         ql.setLoaiphong(cobloaiphong.getSelectedItem().toString()); // Corrected to getSelectedItem
         ql.setGiaphong(Double.parseDouble(txtgiaphong.getText()));
         ql.setDiaci(txtdiachi.getText());
         ql.setDientich(txtdientich.getText());
         ql.setAnh(duongdananh);
+        ql.setId_name(dangnhapInfo.getId_name());
         ArrayQL.add(ql);
+        // thêm vào list phòng cần add
+        listAdd.add(ql);
     }
 
     public void FilDataToArrayListTable() {
         DefaultTableModel model = (DefaultTableModel) tblthongtinphong.getModel();
         model.setRowCount(0);
-        for (quanly ql : ArrayQL) {
+        for (PhongInfo ql : ArrayQL) {
             model.addRow(new Object[]{ql.getLoaitin(), ql.getLoaiphong(), ql.getGiaphong(), ql.getDiaci(), ql.getDientich()});
 
         }
-//        for(quanly ql : ArrayQL)
-//        {
-//            Vector vec = new Vector();
-//            vec.add(ql.getLoaitin());
-//            vec.add(ql.getLoaiphong());
-//            vec.add(ql.getGiaphong());
-//            vec.add(ql.getDiaci());
-//            vec.add(ql.getDientich());
-//            vec.add(ql.getAnh());
-//            model.addRow(vec);
-//        }
     }
     private void btnsuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsuaActionPerformed
-        quanly ql = new quanly();
+        PhongInfo ql = new PhongInfo();
         ql.setLoaitin(cobloaitin.getSelectedItem().toString());
         ql.setLoaiphong(cobloaiphong.getSelectedItem().toString());
         ql.setGiaphong(Double.parseDouble(txtgiaphong.getText()));
         ql.setDiaci(txtdiachi.getText());
         ql.setDientich(txtdientich.getText());
         ql.setAnh(duongdananh);
+        ql.setId_phong(ArrayQL.get(vitri).getId_phong());
+       
         ArrayQL.set(vitri, ql);
         FilDataToArrayListTable();
+        listUpdate.add(ql);
         JOptionPane.showMessageDialog(this, "sua thanh cong");
     }//GEN-LAST:event_btnsuaActionPerformed
     public int vitri = -1;
@@ -274,6 +277,7 @@ public class updatephong extends javax.swing.JFrame {
     }//GEN-LAST:event_btnthemmoiActionPerformed
 
     private void btndangtinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndangtinActionPerformed
+
         String loaitin = cobloaitin.getSelectedItem().toString();
         String loaiphong = cobloaiphong.getSelectedItem().toString();
         double giaphong;
@@ -286,49 +290,19 @@ public class updatephong extends javax.swing.JFrame {
         String diachi = txtdiachi.getText();
         String dientich = txtdientich.getText();
         String anh = duongdananh;
-
-        // Check for empty fields
         if (loaitin.isEmpty() || loaiphong.isEmpty() || diachi.isEmpty() || dientich.isEmpty() || anh.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Vui lòng điền đầy đủ thông tin!");
             return;
         }
-
         // Insert data into database
-        try (Connection conn = DatabaseConection.getConnection()) {
-            String sql = "INSERT INTO thongtinphong (loaitin, loaiphong, gia, diachi, dientich, anh) VALUES (?, ?, ?, ?, ?, ?)";
-            PreparedStatement stmt = conn.prepareStatement(sql);
+        Integer soPhongAdd = PhongDao.themPhong(listAdd);
+        Integer soPhongSua = PhongDao.suaPhong(listUpdate);
+        JOptionPane.showMessageDialog(this, "Đăng tin thành công!");
 
-            // Duyệt qua từng dòng trong JTable và chèn vào cơ sở dữ liệu
-            DefaultTableModel model = (DefaultTableModel) tblthongtinphong.getModel();
-            for (int i = 0; i < model.getRowCount(); i++) {
-                stmt.setString(1, (String) model.getValueAt(i, 0)); // loaitin
-                stmt.setString(2, (String) model.getValueAt(i, 1)); // loaiphong
-                stmt.setDouble(3, (Double) model.getValueAt(i, 2)); // gia
-                stmt.setString(4, (String) model.getValueAt(i, 3)); // diachi
-                stmt.setString(5, (String) model.getValueAt(i, 4)); // dientich
-                stmt.setString(6, anh);  // anh (đã được gán từ bên ngoài)
-
-                int rowsAffected = stmt.executeUpdate();  // Thực hiện insert từng dòng
-                if (rowsAffected > 0) {
-                    System.out.println("Dong da duoc them vao co so du lieu");
-                } else {
-                    System.out.println("Khong them duoc dong");
-                }
-            }
-
-            JOptionPane.showMessageDialog(this, "Đăng tin thành công!");
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            JOptionPane.showMessageDialog(this, "Lỗi kết nối cơ sở dữ liệu: " + ex.getMessage());
+        if (soPhongAdd > 0) {
+            // Clear input fields
+            clearPhongInfo();
         }
-
-        // Clear input fields
-        txtgiaphong.setText("");
-        txtdiachi.setText("");
-        txtdientich.setText("");
-        duongdananh = "";
-        cobloaitin.setSelectedIndex(0);
-        cobloaiphong.setSelectedIndex(0);
     }//GEN-LAST:event_btndangtinActionPerformed
 
     /**
@@ -406,5 +380,19 @@ public class updatephong extends javax.swing.JFrame {
     private javax.swing.JTextField txtdientich;
     private javax.swing.JTextField txtgiaphong;
     // End of variables declaration//GEN-END:variables
+
+    private void displayPhongByUser() {
+        this.ArrayQL = PhongDao.getPhongByUser(dangnhapInfo.getId_name());
+        FilDataToArrayListTable();
+    }
+
+    private void clearPhongInfo() {
+        txtgiaphong.setText("");
+        txtdiachi.setText("");
+        txtdientich.setText("");
+        duongdananh = "";
+        cobloaitin.setSelectedIndex(0);
+        cobloaiphong.setSelectedIndex(0);
+    }
 
 }

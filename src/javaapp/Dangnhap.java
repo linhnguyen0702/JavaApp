@@ -240,7 +240,7 @@ public class Dangnhap extends javax.swing.JFrame {
     private javax.swing.JLabel lblmatkhau;
     private javax.swing.JLabel lblquenmatkhau;
     private javax.swing.JLabel lbltaikhoan;
-    private javax.swing.JPasswordField passmatkhau;
-    private javax.swing.JTextField txttaikhoan;
+    public static javax.swing.JPasswordField passmatkhau;
+    public static javax.swing.JTextField txttaikhoan;
     // End of variables declaration//GEN-END:variables
 }
