@@ -54,7 +54,6 @@ public class Dangnhap extends javax.swing.JFrame {
         btndangnhap = new javax.swing.JButton();
         passmatkhau = new javax.swing.JPasswordField();
         chknhomatkhau = new javax.swing.JCheckBox();
-        lblquenmatkhau = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         lbldangky = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -104,10 +103,6 @@ public class Dangnhap extends javax.swing.JFrame {
             }
         });
         getContentPane().add(chknhomatkhau, new org.netbeans.lib.awtextra.AbsoluteConstraints(33, 201, -1, -1));
-
-        lblquenmatkhau.setForeground(new java.awt.Color(0, 0, 204));
-        lblquenmatkhau.setText("Quên mật khẩu?");
-        getContentPane().add(lblquenmatkhau, new org.netbeans.lib.awtextra.AbsoluteConstraints(315, 203, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
         jLabel3.setText("Bạn chưa có tài khoản ?");
@@ -238,7 +233,6 @@ public class Dangnhap extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel lbldangky;
     private javax.swing.JLabel lblmatkhau;
-    private javax.swing.JLabel lblquenmatkhau;
     private javax.swing.JLabel lbltaikhoan;
     public static javax.swing.JPasswordField passmatkhau;
     public static javax.swing.JTextField txttaikhoan;

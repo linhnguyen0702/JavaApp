@@ -71,34 +71,50 @@ public class updatephong extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        lblloaiphong.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         lblloaiphong.setText("Loại phòng");
-        getContentPane().add(lblloaiphong, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 135, 71, -1));
+        getContentPane().add(lblloaiphong, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 71, 20));
 
+        lblloaitin.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         lblloaitin.setText("Loại tin");
-        getContentPane().add(lblloaitin, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 68, 60, -1));
+        getContentPane().add(lblloaitin, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 60, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("ĐĂNG TIN");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 720, -1));
 
+        lblgiaphong.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         lblgiaphong.setText("Giá phòng");
-        getContentPane().add(lblgiaphong, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 190, -1, -1));
+        getContentPane().add(lblgiaphong, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, -1));
 
+        lbldientich.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         lbldientich.setText("Diện tích");
-        getContentPane().add(lbldientich, new org.netbeans.lib.awtextra.AbsoluteConstraints(333, 287, 71, -1));
+        getContentPane().add(lbldientich, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 71, -1));
 
+        lbldiachi.setFont(new java.awt.Font("Segoe UI", 0, 13)); // NOI18N
         lbldiachi.setText("Địa chỉ");
-        getContentPane().add(lbldiachi, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 287, -1, -1));
+        getContentPane().add(lbldiachi, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, -1, -1));
 
         cobloaitin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cho thuê", "Tìm người ở ghép" }));
-        getContentPane().add(cobloaitin, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 64, 170, 25));
+        getContentPane().add(cobloaitin, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 180, 30));
 
         cobloaiphong.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Phòng", "Căn hộ", "Căn hộ mini", "Nhà nguyên căn" }));
-        getContentPane().add(cobloaiphong, new org.netbeans.lib.awtextra.AbsoluteConstraints(129, 131, 170, 25));
-        getContentPane().add(txtgiaphong, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 224, 176, 27));
-        getContentPane().add(txtdientich, new org.netbeans.lib.awtextra.AbsoluteConstraints(338, 329, 176, 27));
-        getContentPane().add(txtdiachi, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 329, 176, 27));
+        cobloaiphong.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cobloaiphongActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cobloaiphong, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 180, 30));
+        getContentPane().add(txtgiaphong, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 180, 30));
+        getContentPane().add(txtdientich, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 265, 180, 30));
+
+        txtdiachi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtdiachiActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtdiachi, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, 180, 30));
 
         btnanh.setText("Chọn ảnh");
         btnanh.addActionListener(new java.awt.event.ActionListener() {
@@ -106,7 +122,7 @@ public class updatephong extends javax.swing.JFrame {
                 btnanhActionPerformed(evt);
             }
         });
-        getContentPane().add(btnanh, new org.netbeans.lib.awtextra.AbsoluteConstraints(564, 329, 124, 27));
+        getContentPane().add(btnanh, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 300, 124, 27));
         getContentPane().add(lblanh, new org.netbeans.lib.awtextra.AbsoluteConstraints(317, 64, 371, 211));
 
         tblthongtinphong.setModel(new javax.swing.table.DefaultTableModel(
@@ -132,7 +148,7 @@ public class updatephong extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblthongtinphong);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 432, 656, 268));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, 656, 268));
 
         btnthem.setText("Thêm ");
         btnthem.addActionListener(new java.awt.event.ActionListener() {
@@ -140,7 +156,7 @@ public class updatephong extends javax.swing.JFrame {
                 btnthemActionPerformed(evt);
             }
         });
-        getContentPane().add(btnthem, new org.netbeans.lib.awtextra.AbsoluteConstraints(214, 397, 103, -1));
+        getContentPane().add(btnthem, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 360, 103, -1));
 
         btnsua.setText("Sửa");
         btnsua.addActionListener(new java.awt.event.ActionListener() {
@@ -148,7 +164,7 @@ public class updatephong extends javax.swing.JFrame {
                 btnsuaActionPerformed(evt);
             }
         });
-        getContentPane().add(btnsua, new org.netbeans.lib.awtextra.AbsoluteConstraints(407, 397, 103, -1));
+        getContentPane().add(btnsua, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 360, 103, -1));
 
         btnxoa.setText("Xóa");
         btnxoa.addActionListener(new java.awt.event.ActionListener() {
@@ -156,7 +172,7 @@ public class updatephong extends javax.swing.JFrame {
                 btnxoaActionPerformed(evt);
             }
         });
-        getContentPane().add(btnxoa, new org.netbeans.lib.awtextra.AbsoluteConstraints(585, 397, 103, -1));
+        getContentPane().add(btnxoa, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 360, 103, -1));
 
         btnthemmoi.setText("Thêm mới");
         btnthemmoi.addActionListener(new java.awt.event.ActionListener() {
@@ -164,7 +180,7 @@ public class updatephong extends javax.swing.JFrame {
                 btnthemmoiActionPerformed(evt);
             }
         });
-        getContentPane().add(btnthemmoi, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 397, 103, -1));
+        getContentPane().add(btnthemmoi, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 360, 103, -1));
 
         btndangtin.setText("ĐĂNG TIN");
         btndangtin.addActionListener(new java.awt.event.ActionListener() {
@@ -172,10 +188,10 @@ public class updatephong extends javax.swing.JFrame {
                 btndangtinActionPerformed(evt);
             }
         });
-        getContentPane().add(btndangtin, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 730, 114, -1));
+        getContentPane().add(btndangtin, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 690, 114, -1));
 
         lblbackground.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/anhnen(1).jpg"))); // NOI18N
-        getContentPane().add(lblbackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 720, 780));
+        getContentPane().add(lblbackground, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 720, 760));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -210,6 +226,24 @@ public class updatephong extends javax.swing.JFrame {
     }//GEN-LAST:event_btnanhActionPerformed
 
     private void btnthemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnthemActionPerformed
+        String loaitin = cobloaitin.getSelectedItem().toString();
+        String loaiphong = cobloaiphong.getSelectedItem().toString();
+        String giaphongStr = txtgiaphong.getText();
+        double giaphong;
+        try {
+            giaphong = Double.parseDouble(giaphongStr);
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Giá phòng không hợp lệ! Vui lòng nhập lại.");
+            return;
+        }
+        String diachi = txtdiachi.getText();
+        String dientich = txtdientich.getText();
+        String anh = duongdananh;
+        if (loaitin.isEmpty() || loaiphong.isEmpty() || diachi.isEmpty() || dientich.isEmpty() || anh.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Vui lòng điền đầy đủ thông tin!");
+            return;
+        }
+
         FilDataToArrayList();
         FilDataToArrayListTable();
         clearPhongInfo();
@@ -245,10 +279,14 @@ public class updatephong extends javax.swing.JFrame {
         ql.setDientich(txtdientich.getText());
         ql.setAnh(duongdananh);
         ql.setId_phong(ArrayQL.get(vitri).getId_phong());
-       
+
         ArrayQL.set(vitri, ql);
         FilDataToArrayListTable();
-        listUpdate.add(ql);
+        if (ql.getId_phong() == 0) {
+            listAdd.add(ql);
+        } else {
+            listUpdate.add(ql);
+        }
         JOptionPane.showMessageDialog(this, "sua thanh cong");
     }//GEN-LAST:event_btnsuaActionPerformed
     public int vitri = -1;
@@ -278,22 +316,6 @@ public class updatephong extends javax.swing.JFrame {
 
     private void btndangtinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btndangtinActionPerformed
 
-        String loaitin = cobloaitin.getSelectedItem().toString();
-        String loaiphong = cobloaiphong.getSelectedItem().toString();
-        double giaphong;
-        try {
-            giaphong = Double.parseDouble(txtgiaphong.getText());
-        } catch (NumberFormatException e) {
-            JOptionPane.showMessageDialog(this, "Giá phòng không hợp lệ! Vui lòng nhập lại.");
-            return;
-        }
-        String diachi = txtdiachi.getText();
-        String dientich = txtdientich.getText();
-        String anh = duongdananh;
-        if (loaitin.isEmpty() || loaiphong.isEmpty() || diachi.isEmpty() || dientich.isEmpty() || anh.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Vui lòng điền đầy đủ thông tin!");
-            return;
-        }
         // Insert data into database
         Integer soPhongAdd = PhongDao.themPhong(listAdd);
         Integer soPhongSua = PhongDao.suaPhong(listUpdate);
@@ -303,7 +325,19 @@ public class updatephong extends javax.swing.JFrame {
             // Clear input fields
             clearPhongInfo();
         }
+
+        listAdd = new LinkedList<>();
+        listUpdate = new LinkedList<>();
+        displayPhongByUser();
     }//GEN-LAST:event_btndangtinActionPerformed
+
+    private void cobloaiphongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cobloaiphongActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cobloaiphongActionPerformed
+
+    private void txtdiachiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtdiachiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtdiachiActionPerformed
 
     /**
      * @param args the command line arguments

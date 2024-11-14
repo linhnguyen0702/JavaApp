@@ -51,17 +51,17 @@ public class PhongDao {
             return 0;
         }
         try (Connection conn = DatabaseConection.getConnection()) {
-            String sql = "INSERT INTO thongtinphong (loaitin, loaiphong, gia, diachi, dientich, anh,id_name) VALUES (?, ?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO thongtinphong (loaitin, loaiphong, gia, diachi, dientich, anh, id_name) VALUES (?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement stmt = conn.prepareStatement(sql);
 
             // Duyệt qua từng dòng trong JTable và chèn vào cơ sở dữ liệu
             for (PhongInfo phong : list) {
-                stmt.setString(1, phong.getLoaitin()); // loaitin
-                stmt.setString(2, phong.getLoaiphong()); // loaiphong
+                stmt.setString(1, phong.getLoaitin().trim()); // loaitin
+                stmt.setString(2, phong.getLoaiphong().trim()); // loaiphong
                 stmt.setDouble(3, phong.getGiaphong()); // gia
-                stmt.setString(4, phong.getDiaci()); // diachi
-                stmt.setString(5, phong.getDientich()); // dientich
-                stmt.setString(6, phong.getAnh());  // anh (đã được gán từ bên ngoài)
+                stmt.setString(4, phong.getDiaci().trim()); // diachi
+                stmt.setString(5, phong.getDientich().trim()); // dientich
+                stmt.setString(6, phong.getAnh().trim());  // anh (đã được gán từ bên ngoài)
                 stmt.setInt(7, phong.getId_name());
 
                 int rowsAffected = stmt.executeUpdate();  // Thực hiện insert từng dòng
@@ -96,11 +96,11 @@ public class PhongDao {
 
             // Duyệt qua từng dòng trong JTable và chèn vào cơ sở dữ liệu
             for (PhongInfo phong : list) {
-                stmt.setString(1, phong.getLoaitin()); // loaitin
-                stmt.setString(2, phong.getLoaiphong()); // loaiphong
+                stmt.setString(1, phong.getLoaitin().trim()); // loaitin
+                stmt.setString(2, phong.getLoaiphong().trim()); // loaiphong
                 stmt.setDouble(3, phong.getGiaphong()); // gia
-                stmt.setString(4, phong.getDiaci()); // diachi
-                stmt.setString(5, phong.getDientich()); // dientich
+                stmt.setString(4, phong.getDientich().trim()); // dientich
+                stmt.setString(5, phong.getDiaci().trim()); // diachi
                 stmt.setString(6, phong.getAnh());// anh (đã được gán từ bên ngoài)
                 stmt.setInt(7, phong.getId_phong());
 
