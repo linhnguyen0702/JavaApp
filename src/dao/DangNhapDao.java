@@ -39,6 +39,7 @@ public class DangNhapDao {
                 dangnhap.setEmail(rs.getString("email"));
                 dangnhap.setGioiTinh(rs.getString("sex"));
                 dangnhap.setDoiTuong(rs.getString("role"));
+                
                 return dangnhap;
             }
         } catch (SQLException e) {

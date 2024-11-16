@@ -23,6 +23,7 @@ import model.PhongInfo;
 public class updatephong extends javax.swing.JFrame {
 
     private DangnhapInfo dangnhapInfo;
+    private Mainform mainform;
 
     /**
      * Creates new form updatephong
@@ -36,7 +37,11 @@ public class updatephong extends javax.swing.JFrame {
         this.dangnhapInfo = dangnhapInfo;
         displayPhongByUser();
     }
-
+    public updatephong(Mainform mainform) {
+        initComponents();
+        this.mainform = mainform;
+        displayPhongByUser();
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -325,9 +330,20 @@ public class updatephong extends javax.swing.JFrame {
             // Clear input fields
             clearPhongInfo();
         }
-
+        // Display added listings on the main form
+        for (PhongInfo phong : listAdd) {
+            mainform.addListingToDisplay(
+                    phong.getLoaitin(),
+                    phong.getLoaiphong(),
+                    phong.getGiaphong(),
+                    phong.getDiaci(),
+                    phong.getDientich(),
+                    phong.getAnh()
+            );
+        }
         listAdd = new LinkedList<>();
         listUpdate = new LinkedList<>();
+
         displayPhongByUser();
     }//GEN-LAST:event_btndangtinActionPerformed
 

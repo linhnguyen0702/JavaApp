@@ -6,9 +6,14 @@ package javaapp;
 
 import javaapp.chitietphongtro;
 import javaapp.updatethongtin;
+import javax.swing.BorderFactory;
+import javax.swing.BoxLayout;
 import model.DangnhapInfo;
 import javax.swing.ImageIcon;
-import  javax.swing.SwingConstants;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.SwingConstants;
+
 /**
  *
  * @author linhy
@@ -22,32 +27,10 @@ public class Mainform extends javax.swing.JFrame {
      */
     public Mainform() {
         initComponents();
-//        lbldieukhoan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-//        lblemail.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-//        lblfacebook.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-//        lblgioithieu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-//        lblhuongdan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-//        lblinstagram.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-//        lblnhanguyencan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-//        lbltro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-//        lbltuyendung.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-//        lblvanphong.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-//        lbltrogiup.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
     }
 
     public Mainform(DangnhapInfo dangnhapInfo) {
         initComponents();
-//        lbldieukhoan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-//        lblemail.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-//        lblfacebook.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-//        lblgioithieu.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-//        lblhuongdan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-//        lblinstagram.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-//        lblnhanguyencan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-//        lbltro.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-//        lbltuyendung.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-//        lblvanphong.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-//        lbltrogiup.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         this.dangnhapInfo = dangnhapInfo;
         lbltennguoidung.setText(this.dangnhapInfo.getName());
         lbldoituongthue.setText(this.dangnhapInfo.getDoiTuong());
@@ -167,7 +150,7 @@ public class Mainform extends javax.swing.JFrame {
         });
 
         lbldoituongthue.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lbldoituongthue.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lbldoituongthue.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbldoituongthue.setText("Đối tượng");
         lbldoituongthue.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         lbldoituongthue.setVerifyInputWhenFocusTarget(false);
@@ -298,6 +281,35 @@ public class Mainform extends javax.swing.JFrame {
         dangnhap.setLocationRelativeTo(null);
         this.dispose();
     }//GEN-LAST:event_btndangxuatActionPerformed
+// In Mainform class
+
+    public void addListingToDisplay(String loaitin, String loaiphong, double giaphong, String diachi, String dientich, String anh) {
+        // Create a new JPanel to hold the listing information
+        JPanel listingPanel = new JPanel();
+        listingPanel.setLayout(new BoxLayout(listingPanel, BoxLayout.Y_AXIS));
+        listingPanel.setBorder(BorderFactory.createEtchedBorder());
+
+        // Create and add labels for each piece of information
+        JLabel lblLoaitin = new JLabel("Loại tin: " + loaitin);
+        JLabel lblLoaiphong = new JLabel("Loại phòng: " + loaiphong);
+        JLabel lblGiaphong = new JLabel("Giá phòng: " + giaphong + " VND");
+        JLabel lblDiachi = new JLabel("Địa chỉ: " + diachi);
+        JLabel lblDientich = new JLabel("Diện tích: " + dientich + " m²");
+        JLabel lblAnh = new JLabel("Ảnh: " + anh);
+
+        // Add labels to the listing panel
+        listingPanel.add(lblLoaitin);
+        listingPanel.add(lblLoaiphong);
+        listingPanel.add(lblGiaphong);
+        listingPanel.add(lblDiachi);
+        listingPanel.add(lblDientich);
+        listingPanel.add(lblAnh);
+
+        // Add the listing panel to the jphienthi panel
+        jphienthi.add(listingPanel);
+        jphienthi.revalidate();
+        jphienthi.repaint();
+    }
 
     /**
      * @param args the command line arguments
@@ -329,9 +341,9 @@ public class Mainform extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-               Mainform mainform = new Mainform();
-               mainform.setVisible(true);
-               mainform.setResizable(false);
+                Mainform mainform = new Mainform();
+                mainform.setVisible(true);
+                mainform.setResizable(false);
             }
         });
     }

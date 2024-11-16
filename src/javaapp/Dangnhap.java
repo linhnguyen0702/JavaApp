@@ -66,7 +66,7 @@ public class Dangnhap extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("ĐĂNG NHẬP");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 425, 34));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 30, 430, 34));
 
         lbltaikhoan.setFont(new java.awt.Font("Times New Roman", 0, 16)); // NOI18N
         lbltaikhoan.setText("Tài khoản");
@@ -119,7 +119,7 @@ public class Dangnhap extends javax.swing.JFrame {
         getContentPane().add(lbldangky, new org.netbeans.lib.awtextra.AbsoluteConstraints(254, 288, 57, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/anhnen.jpg"))); // NOI18N
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 330));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 320));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -219,8 +219,8 @@ public class Dangnhap extends javax.swing.JFrame {
             public void run() {
                 Dangnhap dangNhap = new Dangnhap();
                 dangNhap.setVisible(true);
-                dangNhap.setResizable(false);
                 dangNhap.setLocationRelativeTo(null);
+                dangNhap.setResizable(false);
             }
         });
     }

@@ -22,7 +22,8 @@ public class DangnhapInfo {
     private String gioiTinh;
     private String doiTuong;
     private int id_name;
-
+    private String password;
+    private  String confirmpassword;
     public String getName() {
         return name;
     }
@@ -101,6 +102,22 @@ public class DangnhapInfo {
 
     public void setId_name(int id_name) {
         this.id_name = id_name;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getConfirmpassword() {
+        return confirmpassword;
+    }
+
+    public void setConfirmpassword(String confirmpassword) {
+        this.confirmpassword = confirmpassword;
     }
 
    
